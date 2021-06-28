@@ -1,6 +1,6 @@
 import { Component } from "react";
 import axios from "axios";
-import MovieList from "../../src/components/MovieList";
+import MoviesList from "../components/MoviesList";
 
 const URL_Top_Movies =
   "https://api.themoviedb.org/3/trending/all/day?api_key=7f5c22cc3d00862e5e2a46a3605db11a";
@@ -21,7 +21,7 @@ class HomePage extends Component {
     return (
       <>
         <h1>Trending today</h1>
-        <MovieList movies={this.state.topMovies} />
+        <MoviesList movies={this.state.topMovies} />
       </>
     );
   }

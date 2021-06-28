@@ -1,5 +1,6 @@
 import { Component } from "react";
 import ApiServices from "../components/moviesAPI";
+import MoviesList from "../components/MoviesList";
 
 class MoviesPage extends Component {
   state = {
@@ -7,16 +8,6 @@ class MoviesPage extends Component {
     movies: [],
     loading: false,
   };
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.searchQuery !== this.state.searchQuery) {
-      this.fetchMovies();
-    }
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
-  }
 
   fetchMovies = () => {
     const { searchQuery } = this.state;
@@ -28,36 +19,34 @@ class MoviesPage extends Component {
     });
   };
 
-  onChangeQuery = (query) => {
-    this.setState({ searchQuery: query, movies: [] });
-  };
-
   handleChange = (e) => {
     this.setState({ searchQuery: e.target.value });
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.onChangeQuery(this.state.inputValue);
-    this.setState({ searchQuery: "" });
+    this.fetchMovies();
   };
 
   render() {
-    const { searchQuery } = this.state;
+    const { searchQuery, movies } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          onChange={this.handleChange}
-          value={searchQuery}
-          type="text"
-          autoComplete="off"
-          autoFocus
-        />
+      <>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            onChange={this.handleChange}
+            value={searchQuery}
+            type="text"
+            autoComplete="off"
+            autoFocus
+          />
 
-        <button type="submit">
-          <span>Search</span>
-        </button>
-      </form>
+          <button type="submit">
+            <span>Search</span>
+          </button>
+        </form>
+        <MoviesList movies={movies} />
+      </>
     );
   }
 }

@@ -1,6 +1,6 @@
 import { Component } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import MovieList from "../../src/components/MovieList";
 
 const URL_Top_Movies =
   "https://api.themoviedb.org/3/trending/all/day?api_key=7f5c22cc3d00862e5e2a46a3605db11a";
@@ -21,16 +21,7 @@ class HomePage extends Component {
     return (
       <>
         <h1>Trending today</h1>
-        <ul>
-          {this.state.topMovies.map(({ id, original_name, original_title }) => (
-            <li key={id}>
-              <Link to={`/movies/${id}`}>
-                {original_title}
-                {original_name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <MovieList movies={this.state.topMovies} />
       </>
     );
   }

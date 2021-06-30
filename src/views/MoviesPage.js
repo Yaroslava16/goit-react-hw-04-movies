@@ -22,10 +22,8 @@ class MoviesPage extends Component {
       });
   }
 
-  fetchMovies = () => {
-    const { searchQuery } = this.state;
-
-    fetchMovies({ searchQuery }).then((response) => {
+  fetchMoviesPage = (searchData) => {
+    fetchMovies(searchData).then((response) => {
       this.setState({
         movies: response.data.results,
       });
@@ -45,11 +43,7 @@ class MoviesPage extends Component {
     }
     this.props.history.push({ search: `search=${searchQuery}` });
 
-    fetchMovies({ searchQuery }).then((response) => {
-      this.setState({
-        movies: response.data.results,
-      });
-    });
+    this.fetchMoviesPage({ searchQuery });
   };
 
   render() {

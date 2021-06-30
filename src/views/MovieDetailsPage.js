@@ -34,10 +34,12 @@ class MovieDetailsPage extends Component {
     if (location.state && location.state.from) {
       return history.push(location.state.from);
     }
+
     history.push(routes.home);
   };
 
   render() {
+    const { location } = this.props;
     return (
       <>
         <button type="button" onClick={this.handleGoBack}>
@@ -64,10 +66,28 @@ class MovieDetailsPage extends Component {
         <h3>Additional information</h3>
         <ul>
           <li>
-            <NavLink to={`/movies/${this.state.id}/cast`}>Cast</NavLink>
+            <NavLink
+              to={{
+                pathname: `/movies/${this.state.id}/cast`,
+                state: {
+                  from: location.state.from,
+                },
+              }}
+            >
+              Cast
+            </NavLink>
           </li>
           <li>
-            <NavLink to={`/movies/${this.state.id}/reviews`}>Reviews</NavLink>
+            <NavLink
+              to={{
+                pathname: `/movies/${this.state.id}/reviews`,
+                state: {
+                  from: location.state.from,
+                },
+              }}
+            >
+              Reviews
+            </NavLink>
           </li>
         </ul>
 

@@ -8,7 +8,4 @@ const fetchMovies = async ({ searchQuery }) => {
   );
 };
 
-const ApiServices = {
-  fetchMovies,
-};
-export default ApiServices;
+export default fetchMovies;

@@ -1,6 +1,7 @@
 import { Component } from "react";
-import ApiServices from "../components/moviesAPI";
-import MoviesList from "../components/MoviesList";
+import fetchMovies from "../components/moviesAPI";
+import MoviesList from "../components/MoviesList/MoviesList";
+import queryString from "query-string";
 
 class MoviesPage extends Component {
   state = {
@@ -9,10 +10,22 @@ class MoviesPage extends Component {
     loading: false,
   };
 
+  componentDidMount() {
+    const searchQuery =
+      queryString.parse(this.props.location.search).search || "";
+
+    searchQuery &&
+      fetchMovies({ searchQuery }).then((response) => {
+        this.setState({
+          movies: response.data.results,
+        });
+      });
+  }
+
   fetchMovies = () => {
     const { searchQuery } = this.state;
 
-    ApiServices.fetchMovies({ searchQuery }).then((response) => {
+    fetchMovies({ searchQuery }).then((response) => {
       this.setState({
         movies: response.data.results,
       });
@@ -25,7 +38,18 @@ class MoviesPage extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.fetchMovies();
+    const { searchQuery } = this.state;
+    if (searchQuery.trim() === "") {
+      alert("Incorrect value");
+      return;
+    }
+    this.props.history.push({ search: `search=${searchQuery}` });
+
+    fetchMovies({ searchQuery }).then((response) => {
+      this.setState({
+        movies: response.data.results,
+      });
+    });
   };
 
   render() {

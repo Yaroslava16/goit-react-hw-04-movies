@@ -3,13 +3,14 @@ import { Component } from "react";
 import { Route, Switch, NavLink } from "react-router-dom";
 import Cast from "./Cast";
 import Reviews from "./Reviews";
+import routes from "../routes";
 
 const URL_Movie = "https://api.themoviedb.org/3/movie/";
 const API_KEY = "7f5c22cc3d00862e5e2a46a3605db11a";
 
 class MovieDetailsPage extends Component {
   state = {
-    poster_path: [],
+    poster_path: "",
     original_title: null,
     release_date: null,
     vote_average: null,
@@ -28,12 +29,22 @@ class MovieDetailsPage extends Component {
     this.setState({ ...response.data });
   }
 
+  handleGoBack = () => {
+    const { history, location } = this.props;
+    if (location.state && location.state.from) {
+      return history.push(location.state.from);
+    }
+    history.push(routes.home);
+  };
+
   render() {
     return (
       <>
+        <button type="button" onClick={this.handleGoBack}>
+          Go back
+        </button>
+
         <img
-          width="350px"
-          height="550px"
           src={`https://image.tmdb.org/t/p/original/${this.state.poster_path}`}
           alt={this.state.original_title}
         />

@@ -1,6 +1,6 @@
 import { Component } from "react";
 import axios from "axios";
-import MoviesList from "../components/MoviesList";
+import MoviesList from "../components/MoviesList/MoviesList";
 
 const URL_Top_Movies =
   "https://api.themoviedb.org/3/trending/all/day?api_key=7f5c22cc3d00862e5e2a46a3605db11a";

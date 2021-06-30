@@ -1,8 +1,12 @@
-const MoviePreview = ({ imgUrl, title, release_date }) => {
+import styles from "../MoviePreview/MoviePreview.module.css";
+
+const MoviePreview = ({ imgUrl, title }) => {
   return (
-    <div>
-      <img width="100px" height="150px" src={imgUrl} alt={title} />
-      <h3>{title}</h3>
+    <div className={styles.Conteiner}>
+      <div className={styles.imgThumb}>
+        <img className={styles.Img} src={imgUrl} alt={title} />
+      </div>
+      <h3 className={styles.Title}>{title}</h3>
     </div>
   );
 };

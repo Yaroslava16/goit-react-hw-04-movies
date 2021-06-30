@@ -1,0 +1,12 @@
+.imgThumb {
+  height: 400px;
+  width: 250px;
+}
+
+.imgThumb > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

@@ -24,31 +24,39 @@ class Cast extends Component {
   render() {
     return (
       <>
-        <ul className={styles.List}>
-          {this.state.cast.map(({ profile_path, name, character, cast_id }) => {
-            return (
-              <>
-                <li className={styles.Item} key={cast_id}>
-                  <img
-                    className={styles.Img}
-                    width="170px"
-                    height="250px"
-                    src={
-                      profile_path
-                        ? `https://image.tmdb.org/t/p/original/${profile_path}`
-                        : defaultProfileImg
-                    }
-                    alt=""
-                  />
-                  <div className={styles.DataCast}>
-                    <p>{name}</p>
-                    <p>{character}</p>
-                  </div>
-                </li>
-              </>
-            );
-          })}
-        </ul>
+        {this.state.cast.length > 0 ? (
+          <ul className={styles.List}>
+            {this.state.cast.map(
+              ({ profile_path, name, character, cast_id }) => {
+                return (
+                  <>
+                    <li className={styles.Item} key={cast_id}>
+                      <img
+                        className={styles.Img}
+                        width="170px"
+                        height="250px"
+                        src={
+                          profile_path
+                            ? `https://image.tmdb.org/t/p/original/${profile_path}`
+                            : defaultProfileImg
+                        }
+                        alt=""
+                      />
+                      <div className={styles.DataCast}>
+                        <p>{name}</p>
+                        <p>{character}</p>
+                      </div>
+                    </li>
+                  </>
+                );
+              }
+            )}
+          </ul>
+        ) : (
+          <p className={styles.NoContent}>
+            Sorry! Information about the actors is unavailable.
+          </p>
+        )}
       </>
     );
   }

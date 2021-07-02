@@ -1,10 +1,11 @@
 import { Route, Switch } from "react-router-dom";
 import AppBar from "./components/AppBar/AppBar";
-import HomePage from "./views/HomePage";
-import MoviesPage from "./views/MoviesPage";
-import MovieDetailsPage from "./views/MovieDetailsPage";
+import HomePage from "./views/HomePage/HomePage";
+import MoviesPage from "./views/MoviesPage/MoviesPage";
+import MovieDetailsPage from "./views/MovieDetailsPage/MovieDetailsPage";
 import NotFoundViews from "./views/NotFoundViews";
 import routes from "./routes";
+import "./styles.css";
 
 const App = () => (
   <>

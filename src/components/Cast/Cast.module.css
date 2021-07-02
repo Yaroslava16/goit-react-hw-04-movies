@@ -1,0 +1,21 @@
+.List {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 20px;
+}
+
+.Item {
+  flex-basis: calc((100% - 10px) / 6);
+  margin-bottom: 30px;
+}
+
+.Img {
+  border-radius: 20px;
+}
+
+.DataCast {
+  width: 170px;
+  text-align: center;
+  line-height: 1.3;
+}

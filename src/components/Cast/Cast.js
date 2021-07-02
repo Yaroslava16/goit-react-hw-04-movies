@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Component } from "react";
-import defaultProfileImg from "../img/default-icon.svg";
-// import { NavLink } from "react-router-dom";
+import defaultProfileImg from "../Cast/default-icon.svg";
+import styles from "../Cast/Cast.module.css";
 
 const URL_Movie = "https://api.themoviedb.org/3/movie/";
 const API_KEY = "7f5c22cc3d00862e5e2a46a3605db11a";
@@ -24,12 +24,13 @@ class Cast extends Component {
   render() {
     return (
       <>
-        <ul>
+        <ul className={styles.List}>
           {this.state.cast.map(({ profile_path, name, character, cast_id }) => {
             return (
               <>
-                <li key={cast_id}>
+                <li className={styles.Item} key={cast_id}>
                   <img
+                    className={styles.Img}
                     width="170px"
                     height="250px"
                     src={
@@ -39,8 +40,10 @@ class Cast extends Component {
                     }
                     alt=""
                   />
-                  <p>{name}</p>
-                  <p>{character}</p>
+                  <div className={styles.DataCast}>
+                    <p>{name}</p>
+                    <p>{character}</p>
+                  </div>
                 </li>
               </>
             );

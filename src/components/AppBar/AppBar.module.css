@@ -1,0 +1,9 @@
+.AppBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-bottom: 1px solid #ccc;
+}

@@ -1,0 +1,31 @@
+.Form {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.Input {
+  min-width: 400px;
+  padding: 10px;
+  margin-right: 30px;
+  font-size: x-large;
+  border-radius: 20px;
+  outline: none;
+  border-color: black;
+}
+
+.Btn {
+  width: 100px;
+  font-size: large;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transform: scale(1, 1);
+  transition-timing-function: ease-out;
+  transition-duration: 550ms;
+}
+
+.Btn:hover {
+  transform: scale(1.2);
+  transition-timing-function: ease-out;
+  transition-duration: 550ms;
+}

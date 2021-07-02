@@ -1,0 +1,14 @@
+.Title {
+  text-align: center;
+}
+
+.List {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 20px;
+}
+
+.Item {
+  flex-basis: calc((100% - 10px) / 6);
+}

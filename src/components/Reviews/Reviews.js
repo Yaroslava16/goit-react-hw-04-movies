@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Component } from "react";
+import styles from "../Reviews/Reviews.module.css";
 
 const URL_Reviews = "https://api.themoviedb.org/3/movie/";
 
@@ -24,20 +25,22 @@ class Reviews extends Component {
     return (
       <>
         {this.state.reviews.length > 0 ? (
-          <ul>
+          <ul className={styles.List}>
             {this.state.reviews.map(({ id, author, content }) => {
               return (
                 <>
                   <li key={id}>
-                    <p>Author: {author}</p>
-                    <p>{content}</p>
+                    <p className={styles.Author}>Author: {author}</p>
+                    <p className={styles.Content}>{content}</p>
                   </li>
                 </>
               );
             })}
           </ul>
         ) : (
-          <p>We don't have any reviews for this movie.</p>
+          <p className={styles.NoContent}>
+            We don't have any reviews for this movie.
+          </p>
         )}
       </>
     );

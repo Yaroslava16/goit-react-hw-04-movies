@@ -1,0 +1,21 @@
+.Item {
+  font-size: x-large;
+  font-weight: 900;
+  margin-right: 180px;
+}
+
+.Item:last-child {
+  margin-right: 0;
+}
+
+.ItemLink {
+  padding: 10px;
+  color: black;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.ItemLink:hover,
+.ItemLink:focus {
+  border: 1px solid orangered;
+}

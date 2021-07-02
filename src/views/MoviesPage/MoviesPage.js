@@ -1,6 +1,7 @@
 import { Component } from "react";
-import fetchMovies from "../components/moviesAPI";
-import MoviesList from "../components/MoviesList/MoviesList";
+import fetchMovies from "../../components/moviesAPI";
+import MoviesList from "../../components/MoviesList/MoviesList";
+import styles from "../MoviesPage/MoviesPage.module.css";
 import queryString from "query-string";
 
 class MoviesPage extends Component {
@@ -50,8 +51,9 @@ class MoviesPage extends Component {
     const { searchQuery, movies } = this.state;
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
+        <form className={styles.Form} onSubmit={this.handleSubmit}>
           <input
+            className={styles.Input}
             onChange={this.handleChange}
             value={searchQuery}
             type="text"
@@ -59,8 +61,8 @@ class MoviesPage extends Component {
             autoFocus
           />
 
-          <button type="submit">
-            <span>Search</span>
+          <button className={styles.Btn} type="submit">
+            🔍
           </button>
         </form>
         <MoviesList movies={movies} />

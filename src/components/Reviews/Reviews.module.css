@@ -1,0 +1,15 @@
+.Author {
+  font-size: larger;
+  font-weight: 700;
+}
+
+.Content {
+  padding-left: 15px;
+  width: 1200px;
+  line-height: 1.3;
+}
+
+.NoContent {
+  text-align: center;
+  font-size: x-large;
+}

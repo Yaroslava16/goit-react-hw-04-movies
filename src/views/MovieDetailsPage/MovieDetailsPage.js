@@ -3,7 +3,7 @@ import { Component } from "react";
 import { Route, Switch, NavLink } from "react-router-dom";
 import Cast from "../../components/Cast/Cast";
 import Reviews from "../../components/Reviews/Reviews";
-import routes from "../../routes";
+import routes from "../../components/routes";
 import defaultMoviePoster from "../../components/MoviesList/default-movie-poster.jpg";
 import styles from "../MovieDetailsPage/MovieDetailsPage.module.css";
 

@@ -17,5 +17,5 @@
 
 .ItemLink:hover,
 .ItemLink:focus {
-  border: 1px solid orangered;
+  border: 1px solid rgb(36, 174, 253);
 }

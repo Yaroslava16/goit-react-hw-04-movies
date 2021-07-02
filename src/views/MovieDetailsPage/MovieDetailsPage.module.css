@@ -15,6 +15,7 @@
   display: block;
   text-decoration: none;
   font-family: "Open Sans";
+  font-weight: 700;
   text-transform: uppercase;
   border-radius: 20px;
   border: none;
@@ -53,7 +54,7 @@
   left: 0;
   opacity: 1;
 
-  color: #adadaf;
+  color: #ffffff;
   display: block;
   padding: 0 30px;
   line-height: 40px;
@@ -71,6 +72,10 @@
 
 .ConteinerImg {
   margin-right: 40px;
+}
+
+.Img {
+  object-fit: contain;
 }
 
 .ConteinerData {
@@ -113,7 +118,7 @@
 
 .ItemAdditional:hover,
 .ItemAdditional:focus {
-  border: 1px solid orangered;
+  border: 1px solid rgb(36, 174, 253);
 }
 
 .LinkAdditional {

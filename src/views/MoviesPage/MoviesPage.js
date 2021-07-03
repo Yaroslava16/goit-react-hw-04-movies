@@ -62,7 +62,7 @@ class MoviesPage extends Component {
           />
 
           <button className={styles.Btn} type="submit">
-            🔍
+            <span>🔍</span>
           </button>
         </form>
         <MoviesList movies={movies} />

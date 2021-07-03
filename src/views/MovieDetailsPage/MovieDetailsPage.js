@@ -7,7 +7,7 @@ import routes from "../../components/routes";
 import defaultMoviePoster from "../../components/MoviesList/default-movie-poster.jpg";
 import styles from "../MovieDetailsPage/MovieDetailsPage.module.css";
 
-const URL_Movie = "https://api.themoviedb.org/3/movie/";
+const URL_Movie = "https://api.themoviedb.org/3/movie";
 const API_KEY = "7f5c22cc3d00862e5e2a46a3605db11a";
 
 class MovieDetailsPage extends Component {

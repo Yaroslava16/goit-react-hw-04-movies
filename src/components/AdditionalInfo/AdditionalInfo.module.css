@@ -1,0 +1,31 @@
+.TitleAdditional {
+  text-align: center;
+}
+
+.ListAdditional {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.ItemAdditional:not(:last-child) {
+  margin-right: 40px;
+}
+
+.ItemAdditional {
+  padding: 5px;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.ItemAdditional:hover,
+.ItemAdditional:focus {
+  border: 1px solid rgb(36, 174, 253);
+}
+
+.LinkAdditional {
+  color: black;
+  font-weight: bolder;
+}

@@ -8,13 +8,11 @@ const HomePage = lazy(() =>
   import("./views/HomePage/HomePage.js" /* webpackChunkName: "home-page" */)
 );
 const MoviesPage = lazy(() =>
-  import(
-    "./views/MoviesPage/MoviesPage.js" /* webpackChunkName: "movies-page" */
-  )
+  import("./views/MoviesPage.js" /* webpackChunkName: "movies-page" */)
 );
 const MovieDetailsPage = lazy(() =>
   import(
-    "./views/MovieDetailsPage/MovieDetailsPage.js" /* webpackChunkName: "movie-details-page" */
+    "./views/MovieDetailsPage.js" /* webpackChunkName: "movie-details-page" */
   )
 );
 const NotFoundViews = lazy(() =>
